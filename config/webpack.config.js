@@ -21,7 +21,7 @@ module.exports = {
                 use: [
                     {loader: 'imports-loader?define=>false'}
                 ]
-            }
+            },
         ]
     },
     plugins: [

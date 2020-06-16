@@ -1,17 +1,11 @@
 class DigiClock extends HTMLElement{
-    constructor(){
-        super();
-        this.shadow = this.attachShadow({mode:'open'})
-    }
-
-    set buat(data){
+    connectedCallback(){
         this.render();
     }
 
     render(){
-        this.shadow.innerHTML = `
+        this.innerHTML = `
             <div class="digiClock">
-                <p class="btn btn-primay">ada</p>
                 <span class="tgl"></span>
                 <span class="jam"></span>
             </div>`;

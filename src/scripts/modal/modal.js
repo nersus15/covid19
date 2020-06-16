@@ -1,3 +1,4 @@
+import path from 'path';
 class ModalGen {
     // stored_modal = {}
     set storeModal(params) {
@@ -133,18 +134,41 @@ class ModalGen {
     static generateCard(el){
         let card = "";
         let cardHead = "";
-        let images = '';
+        let Topimage = '';
+        let Bottomimage = '';
+        let Leftimage = '';
+        let Rightimage = '';
         let links = "";
         let buttons = "";
+        if(!el.styles)
+            el.styles = '';
+
+        if(!el.class)
+            el.class = '';
+
         if(el.width == 'standart' || !el.width)
-            cardHead += `<div id="${el.id}" class="card" style="width: 18rem;">`;
+            cardHead += `<div id="${el.id}" class="card ${el.class}" style="width: 18rem; ${el.styles}">`;
         else 
-            cardhead += `<div id="${el.id}" class="card" style="width: ${el.width};">`;
+            cardhead += `<div id="${el.id}" class="card ${el.class}" style="width: ${el.width}; ${el.styles}">`;
 
         if(el.images){
             el.images.forEach(image => {
+                if(!image.styles)
+                    image.styles = '';
+                if(image.class)
+                    image.class = '';
+
                 if(image.position == 'top')
-                    images += `<img src="${image.src}" class="card-img-top" alt="${image.alt}">`;
+                    Topimage += `<img class="${image.class}" style="${image.styles}" src="${image.src}" class="card-img-top" alt="${image.alt}">`;
+
+                if(image.position == 'left')
+                    Leftimage += `<img class="${image.class}" style="${image.styles}" src="${image.src}" class="card-img-top" alt="${image.alt}">`;
+
+                if(image.position == 'bottom')
+                    Bottomimage += `<img class="${image.class}" style="${image.styles}" src="${image.src}" class="card-img-top" alt="${image.alt}">`;
+                
+                if(image.position == 'right')
+                    Rightimage += `<img class="${image.class}" style="${image.styles}" src="${image.src}" class="card-img-top" alt="${image.alt}">`;
             });
         }
 
@@ -170,17 +194,41 @@ class ModalGen {
                 links += `<a href="${link.href}" ${link.extra} id="${link.id}" class="card-link ${link.class}">${link.text}</a>`;
             })
         }
-        card += 
-            `${cardHead}
-                <div class="card-body">
-                    ${images}
-                    <h5 class="card-title">${el.title}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">${el.subtitle}</h6>
-                    <p class="card-text">${el.text}</p>
-                    ${links}
-                    ${buttons}
-                </div>
-            </div>`;
+            if(!Leftimage && !Rightimage){
+                card += 
+                    `${cardHead}
+                        <div class="card-body">
+                            ${Topimage}
+                            
+                            <h5 class="card-title">${el.title}</h5>
+                            <h6 class="card-subtitle mb-2">${el.subtitle}</h6>
+                            <p class="card-text">${el.text}</p>
+                            ${links}
+                            ${buttons}
+                            ${Bottomimage}
+                        </div>
+                    </div>`;
+            }else{
+                card += `
+                ${cardHead}
+                    <div class="card-body">
+                        <div style='display: flex'> 
+                            ${Leftimage}                        
+                            <div style="margin-left: 2%">
+                                <h5 class="card-title">${el.title}</h5>
+                                <h6 class="card-subtitle mb-2">${el.subtitle}</h6>
+                                <p class="card-text">${el.text}</p>
+                            </div>
+                            ${Rightimage}
+                        </div>
+                        ${links}
+                        ${buttons}                        
+                    </div>
+                </div>`
+            }
+
+
+
 
         return card;  
     }

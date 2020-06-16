@@ -4,6 +4,7 @@ import moment from 'moment';
 
 class Modal extends HTMLElement {
     sebelumRender(){
+        moment().locale('id');
         const {modalId, wrapper, opt} = modalConf["country-detail"];
         const textMap = {
             'total_tests': 'Total test yang dilakukan',
@@ -13,8 +14,8 @@ class Modal extends HTMLElement {
             'serious_critical': 'Kasus Kritis',
             'total_deaths': 'Total Meninggal'               
         };
-
-        opt.modalTitle= "Detail Kasus di Negara " + this._data.country_name;
+        
+        opt.modalTitle= `Detail Kasus di Negara "${this._data.country_name}"`;
         opt.modalSubtitle = "Update pada: " + moment(this._data.record_date).format('LL LT')
         opt.modalBody.card.forEach((card, index)=> {
             opt.modalBody.card[index].subtitle = this._data[card.id];

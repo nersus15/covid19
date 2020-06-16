@@ -3,8 +3,17 @@ import '../component/tabel.js';
 import '../component/modal.js';
 import '../component/content.js';
 import '../component/about.me.js';
+import '../component/spinner.js';
+
 const main = ()=>{
-    let reload = setInterval(init, 600000);
+    const spinnerStyles = {
+        color: 'text-info',
+        width: '3', //dalam rem
+        height: '3', // dalam rem
+        type: 'spinner-grow'
+
+    };
+    let reload = setInterval(getAffectedCountry, 600000);
     const applyDatatables = () => {
         $('#tbl-affected-country').DataTable({
             "columnDefs": [ {
@@ -19,7 +28,7 @@ const main = ()=>{
     }
     const renderAbout = () =>{
         const aboutMe = {
-            image: 'https://www.dicoding.com/images/small/avatar/2019040917343047ff214c7a8d07ee3b5aea1f6451b1fd.jpg',
+            image: '/src/images/profile.jpg',
             name: "Fathurrahman",
             alamat: 'Desa Sukarara, Kec. Sakra Barat, Kab. Lombok Timur, NTB, Indonesia',
             tglLahir: '24 Agustus 1999',
@@ -31,7 +40,7 @@ const main = ()=>{
             instagram: 'https://www.instagram.com/fathur_ashter15/'
         }
         $('.heading #err-detail').remove();
-        $('.container').children().remove();
+        $('bt-spinner').remove();
         $('.container').append('<about-me></about-me>');
         $('about-me')[0].buat = aboutMe;
         
@@ -39,7 +48,7 @@ const main = ()=>{
 
     const renderTable = data =>{
         $('.heading #err-detail').remove();
-        $('.container').children().remove();
+        $('bt-spinner').remove();
         $('.container').append('<affected-country></affected-country>');
         $.when($('affected-country')[0].buat = data).done(applyDatatables);
 
@@ -56,9 +65,9 @@ const main = ()=>{
         }
     }
 
-    async function init () {
+    async function getAffectedCountry () {
         try{
-            $('.container').append('<h4>Loading...</h4>');
+            tampilkanSpinner('.container');
             const res = await Sources.getAffectedCountry();  
             renderTable(res)
         }
@@ -67,12 +76,26 @@ const main = ()=>{
             $('.container').append(`<h2> ${err} </h2>`);
         }
     }
-    init();
+
+    const updateJam = ()=>{
+        moment().locale('id');
+        $('digi-clock .tgl').html(moment().format('LL'));
+        $('digi-clock .jam').html(moment().format('LTS'));
+        setTimeout(updateJam, 1000);
+    }
+
+    const tampilkanSpinner = (el) => {
+        $(el).append('<bt-spinner></bt-spinner>');
+        $('bt-spinner')[0].buat = spinnerStyles;
+    }
+
+    updateJam();
+    getAffectedCountry();
 
     $('#home').click(() => {
-        reload = setInterval(init, 600000)
+        reload = setInterval(getAffectedCountry, 600000)
         $('content-heading')[0].data = {title: "Corona Virus Realtime Data", subtitle: "Update every 10 minutes"};
-        init();
+        getAffectedCountry();
     });
 
     $('#about-me').click(()=>{

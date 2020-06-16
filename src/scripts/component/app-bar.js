@@ -7,11 +7,6 @@ class AppBar extends HTMLElement{
         this.render();
     }
     
-    setelahRender(){
-        $('.other-menus').append('<digi-clock></digi-clock>');
-        $('digi-clock')[0].buat = this._digiStyle;
-    }
-
     render(){
         this.innerHTML =
         `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
@@ -31,7 +26,6 @@ class AppBar extends HTMLElement{
         </nav>
         `;
 
-        setelahRender();
     }
 }
 customElements.define('app-bar', AppBar);
