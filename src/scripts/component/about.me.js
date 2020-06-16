@@ -26,7 +26,7 @@ class AboutMe extends HTMLElement{
                                 <br />
                                 <i class="fas fa-school"></i> ${this._data.kampus}
                                 <br />
-                                Dicoding: <a target="blank" href="${this._data.dicoding}">${this._data.dicoding.replace('https://', '')}</a> <br/>
+                                Dicoding: <a target="_blank" href="${this._data.dicoding}">${this._data.dicoding.replace('https://', '')}</a> <br/>
                                 </p>
                             <!-- Split button -->
                             <div class="dropdown">
@@ -34,10 +34,10 @@ class AboutMe extends HTMLElement{
                                     Social
                                 </button>
                                 <div class="dropdown-menu" aria-labelledby="socials">
-                                    <a class="dropdown-item" target="blank" href="${this._data.instagram}">Instagram</a>
-                                    <a class="dropdown-item" target="blank" href="${this._data.facebook}">Facebook</a>
-                                    <a class="dropdown-item" target="blank" href="${this._data.github}">Github</a>
-                                    <a class="dropdown-item" target="blank" href="${this._data.linkedin}">Linkedin</a>
+                                    <a class="dropdown-item" target="_blank" href="${this._data.instagram}">Instagram</a>
+                                    <a class="dropdown-item" target="_blank" href="${this._data.facebook}">Facebook</a>
+                                    <a class="dropdown-item" target="_blank" href="${this._data.github}">Github</a>
+                                    <a class="dropdown-item" target="_blank" href="${this._data.linkedin}">Linkedin</a>
                                 </div>
                             </div>                            
                         </div>

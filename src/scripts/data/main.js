@@ -37,7 +37,8 @@ const main = ()=>{
             dicoding: 'https://www.dicoding.com/users/402401',
             github: 'https://www.github.com/nersus15',
             facebook: 'https://web.facebook.com/fathur.ashter15',
-            instagram: 'https://www.instagram.com/fathur_ashter15/'
+            instagram: 'https://www.instagram.com/fathur_ashter15/',
+            linkedin: 'https://www.linkedin.com/in/fathurrahman-fathurrahman-417921173/',
         }
         $('.heading #err-detail').remove();
         $('bt-spinner').remove();
