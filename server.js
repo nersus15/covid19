@@ -5,7 +5,7 @@ const app = express();
 
 // send the user to index html page inspite of the url
 app.get('/', (req, res) => {
-  res.direct('/dist/');
+  res.redirect('/dist');
    
 })
 
