@@ -2,13 +2,10 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 module.exports = {
-    entry: {
-        main: './src/index.js',
-        server: './server.js'
-    },
+    entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, '../dist'),
-        filename: '[name].js'
+        filename: 'main.js'
     },
     module: {
         rules: [
