@@ -1,0 +1,50 @@
+{
+  "name": "submission-covid19",
+  "version": "1.0.0",
+  "description": "Dicocing Submission | Belajar Fundamental Front-End Web",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "webpack-dev-server --config ./config/webpack.dev.js",
+    "build": "webpack --config ./config/webpack.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nersus15/covid19.git"
+  },
+  "keywords": [
+    "covid19",
+    "dicoding",
+    "submission"
+  ],
+  "author": "fathurrahman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nersus15/covid19/issues"
+  },
+  "homepage": "https://github.com/nersus15/covid19#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^3.5.3",
+    "html-webpack-plugin": "^4.3.0",
+    "imports-loader": "^0.8.0",
+    "npm-install-webpack-plugin": "^4.0.5",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "@popperjs/core": "^2.4.2",
+    "bootstrap": "^4.5.0",
+    "datatables.net": "^1.10.21",
+    "datatables.net-bs4": "^1.10.21",
+    "datatables.net-dt": "^1.10.21",
+    "jquery": "^3.5.1",
+    "moment": "^2.26.0"
+  }
+}
