@@ -95,7 +95,7 @@ const main = ()=>{
 
     $('#home').click(() => {
         reload = setInterval(getAffectedCountry, 600000)
-        $('content-heading')[0].data = {title: "Corona Virus Realtime Data", subtitle: "Update every 10 minutes"};
+        $('content-heading')[0].data = {title: "Corona Virus Realtime Data"};
         getAffectedCountry();
     });
 
