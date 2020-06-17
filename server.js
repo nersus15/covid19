@@ -4,8 +4,8 @@ const port = process.env.PORT || 8080;
 const app = express();
 
 // send the user to index html page inspite of the url
-app.get('*', (req, res)=>{
-    res.sendFile(path.joiin(__diname, 'dist/index.html'));
+app.get('/', (req, res)=>{
+    res.sendFile(path.joiin(__dirname, 'dist/index.html'));
 })
 
 app.listen(port);
