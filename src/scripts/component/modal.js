@@ -16,7 +16,7 @@ class Modal extends HTMLElement {
         };
         
         opt.modalTitle= `Detail Kasus di Negara "${this._data.country_name}"`;
-        opt.modalSubtitle = "Update pada: " + moment(this._data.record_date).format('LL LT')
+        opt.modalSubtitle = "Update pada: " + this._data.record_date;
         opt.modalBody.card.forEach((card, index)=> {
             opt.modalBody.card[index].subtitle = this._data[card.id];
             opt.modalBody.card[index].title = textMap[card.id];
