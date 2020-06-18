@@ -4,7 +4,7 @@ import '../component/modal.js';
 import '../component/content.js';
 import '../component/about.me.js';
 import '../component/spinner.js';
-
+import photoProfile from '../../images/profile.jpg';
 const main = ()=>{
     const spinnerStyles = {
         color: 'text-info',
@@ -28,7 +28,7 @@ const main = ()=>{
     }
     const renderAbout = () =>{
         const aboutMe = {
-            image: '/src/images/profile.jpg',
+            image: photoProfile,
             name: "Fathurrahman",
             alamat: 'Desa Sukarara, Kec. Sakra Barat, Kab. Lombok Timur, NTB, Indonesia',
             tglLahir: '24 Agustus 1999',
