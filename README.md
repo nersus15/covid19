@@ -16,8 +16,9 @@ Menggunakan beberapa teknologi:
 ## Untuk menjalankan projectnya di komputer lokal:
 1. Clone/ download project
 2. Extract dan masuk ke folder project di terminal
-3. Ktikan npm run build
-4. Setelah selesai, ktikan npm run start:dev untuk menjalankan webpack dev server yang berfungsi untuk membuat lokal server yang nantinya akan otomatis reload ketika ada perubahan source code
+3. Ktikan npm install
+4. kemudian setelah proses selesai, lanjutkan dengan mengetik npm run build
+5. Setelah selesai, ktikan npm run start:dev untuk menjalankan webpack dev server yang berfungsi untuk membuat lokal server yang nantinya akan otomatis reload ketika ada perubahan source code
 
 Untuk file node.server.js bisa dihapus jika menjalankan di server lokal, kemudian hapus "express" dari daftar dependencies dan juga hapus key 'start' di object scripts
 
