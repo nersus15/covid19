@@ -1,3 +1,10 @@
+import patientIcon from '../src/images/patient.svg';
+import criticalIcon from '../src/images/critical.svg';
+import recoveredIcon from '../src/images/recovered.svg';
+import deathIcon from '../src/images/death.svg';
+import hospitalBedIcon from '../src/images/hospital-bed.svg';
+import bloodTestIcon from '../src/images/blood-test.svg';
+
 const modalConf = {
     "form" : {
          modalId: "modalID",
@@ -86,42 +93,42 @@ const modalConf = {
                         id: 'total_tests',
                         styles: "background-color: #f2d411; color: white;",
                         images: [
-                            {src: '/src/images/blood-test.svg', alt: 'total test icon', position: 'left', styles: 'width: 70px;'},
+                            {src: bloodTestIcon, alt: 'total test icon', position: 'left', styles: 'width: 70px;'},
                         ]
                     },
                     {
                         id: 'total_cases',
                         styles: "background-color: #f74114; color: white",
                         images: [
-                            {src: '/src/images/patient.svg', alt: 'total cases icon', position: 'left', styles: 'width: 70px;'},
+                            {src: patientIcon, alt: 'total cases icon', position: 'left', styles: 'width: 70px;'},
                         ]
                     },
                     {
                         id: 'active_cases',
                         styles: "background-color: #eb265a; color: white",
                         images: [
-                            {src: '/src/images/hospital-bed.svg', alt: 'active cases icon', position: 'left', styles: 'width: 70px;'},
+                            {src: hospitalBedIcon, alt: 'active cases icon', position: 'left', styles: 'width: 70px;'},
                         ]
                     },
                     {
                         id: 'total_recovered',
                         styles: "background-color: #32cf0a; color: white",
                         images: [
-                            {src: '/src/images/recovered.svg', alt: 'total recovered icon', position: 'left', styles: 'width: 70px;'},
+                            {src: recoveredIcon, alt: 'total recovered icon', position: 'left', styles: 'width: 70px;'},
                         ]
                     },
                     {
                         id: 'serious_critical',
                         styles: "background-color:#046e91; color: white",
                         images: [
-                            {src: '/src/images/critical.svg', alt: 'serious critical icon', position: 'left', styles: 'width: 70px;'},
+                            {src: criticalIcon, alt: 'serious critical icon', position: 'left', styles: 'width: 70px;'},
                         ]
                     },
                     {
                         id: 'total_deaths',
                         styles: "background-color: #910404; color: white",
                         images: [
-                            {src: '/src/images/death.svg', alt: 'total deaths icon', position: 'left', styles: 'width: 70px;'},
+                            {src: deathIcon, alt: 'total deaths icon', position: 'left', styles: 'width: 70px;'},
                         ]
                     }
                 ]
