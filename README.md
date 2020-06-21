@@ -25,8 +25,8 @@ Untuk file node.server.js bisa dihapus jika menjalankan di server lokal, kemudia
 Untuk melihat hasilnya bisan mengunjungi
 [Demo](https://c-19-kamscode.herokuapp.com/)
 
-Sumber data (Api):
+## Sumber data (Api):
 
-Affected country: https://coronavirus-monitor.p.rapidapi.com/coronavirus/affected
-Latest stat by country: https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php?country={nama negara}
-Selengkapnya di: https://rapidapi.com/astsiatsko/api/coronavirus-monitor
+* Affected country: https://coronavirus-monitor.p.rapidapi.com/coronavirus/affected
+* Latest stat by country: https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php?country={nama negara}
+* Selengkapnya di: https://rapidapi.com/astsiatsko/api/coronavirus-monitor
